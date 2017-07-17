@@ -1,0 +1,4 @@
+rootProject.name = 'JAnalyticsDemo'
+include ':app', 'janalytics-react-native'
+project(':janalytics-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/janalytics-react-native/android')
+
