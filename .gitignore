@@ -184,3 +184,5 @@ typings/
 
 .qshell
 *.qshel
+*.DS_Store
+example/node_modules/
