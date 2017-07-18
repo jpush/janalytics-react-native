@@ -10,6 +10,17 @@
 		62482DFE1F1DE72F009C9996 /* RCTJAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 62482DFD1F1DE72F009C9996 /* RCTJAnalyticsModule.m */; };
 		62482DFF1F1DE72F009C9996 /* RCTJAnalyticsModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62482DFC1F1DE72F009C9996 /* RCTJAnalyticsModule.h */; };
 		62482E091F1DE78D009C9996 /* janalytics-ios-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E051F1DE78D009C9996 /* janalytics-ios-1.1.3.a */; };
+		62482E861F1E1493009C9996 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E851F1E1493009C9996 /* libz.tbd */; };
+		62482E881F1E149B009C9996 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E871F1E149B009C9996 /* CoreTelephony.framework */; };
+		62482E8A1F1E14A1009C9996 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E891F1E14A1009C9996 /* Security.framework */; };
+		62482E8C1F1E14A6009C9996 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E8B1F1E14A6009C9996 /* CFNetwork.framework */; };
+		62482E8E1F1E14AC009C9996 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E8D1F1E14AC009C9996 /* CoreFoundation.framework */; };
+		62482E901F1E14B2009C9996 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E8F1F1E14B2009C9996 /* SystemConfiguration.framework */; };
+		62482E921F1E14B8009C9996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E911F1E14B8009C9996 /* Foundation.framework */; };
+		62482E941F1E14C1009C9996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E931F1E14C1009C9996 /* UIKit.framework */; };
+		62482E961F1E14C7009C9996 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E951F1E14C7009C9996 /* libresolv.tbd */; };
+		62482E981F1E14D0009C9996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E971F1E14D0009C9996 /* CoreGraphics.framework */; };
+		62482E9A1F1E14D6009C9996 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E991F1E14D6009C9996 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +43,17 @@
 		62482E051F1DE78D009C9996 /* janalytics-ios-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "janalytics-ios-1.1.3.a"; sourceTree = "<group>"; };
 		62482E061F1DE78D009C9996 /* JANALYTICSEventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JANALYTICSEventObject.h; sourceTree = "<group>"; };
 		62482E071F1DE78D009C9996 /* JANALYTICSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JANALYTICSService.h; sourceTree = "<group>"; };
+		62482E851F1E1493009C9996 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		62482E871F1E149B009C9996 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		62482E891F1E14A1009C9996 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		62482E8B1F1E14A6009C9996 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		62482E8D1F1E14AC009C9996 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		62482E8F1F1E14B2009C9996 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		62482E911F1E14B8009C9996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		62482E931F1E14C1009C9996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		62482E951F1E14C7009C9996 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		62482E971F1E14D0009C9996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		62482E991F1E14D6009C9996 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +61,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62482E9A1F1E14D6009C9996 /* CoreLocation.framework in Frameworks */,
+				62482E981F1E14D0009C9996 /* CoreGraphics.framework in Frameworks */,
+				62482E961F1E14C7009C9996 /* libresolv.tbd in Frameworks */,
+				62482E941F1E14C1009C9996 /* UIKit.framework in Frameworks */,
+				62482E921F1E14B8009C9996 /* Foundation.framework in Frameworks */,
+				62482E901F1E14B2009C9996 /* SystemConfiguration.framework in Frameworks */,
+				62482E8E1F1E14AC009C9996 /* CoreFoundation.framework in Frameworks */,
+				62482E8C1F1E14A6009C9996 /* CFNetwork.framework in Frameworks */,
+				62482E8A1F1E14A1009C9996 /* Security.framework in Frameworks */,
+				62482E881F1E149B009C9996 /* CoreTelephony.framework in Frameworks */,
+				62482E861F1E1493009C9996 /* libz.tbd in Frameworks */,
 				62482E091F1DE78D009C9996 /* janalytics-ios-1.1.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +84,7 @@
 			children = (
 				62482DFB1F1DE72F009C9996 /* RCTJAnalyticsModule */,
 				62482DFA1F1DE72F009C9996 /* Products */,
+				62482E841F1E1493009C9996 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +106,24 @@
 				62482DFD1F1DE72F009C9996 /* RCTJAnalyticsModule.m */,
 			);
 			path = RCTJAnalyticsModule;
+			sourceTree = "<group>";
+		};
+		62482E841F1E1493009C9996 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62482E991F1E14D6009C9996 /* CoreLocation.framework */,
+				62482E971F1E14D0009C9996 /* CoreGraphics.framework */,
+				62482E951F1E14C7009C9996 /* libresolv.tbd */,
+				62482E931F1E14C1009C9996 /* UIKit.framework */,
+				62482E911F1E14B8009C9996 /* Foundation.framework */,
+				62482E8F1F1E14B2009C9996 /* SystemConfiguration.framework */,
+				62482E8D1F1E14AC009C9996 /* CoreFoundation.framework */,
+				62482E8B1F1E14A6009C9996 /* CFNetwork.framework */,
+				62482E891F1E14A1009C9996 /* Security.framework */,
+				62482E871F1E149B009C9996 /* CoreTelephony.framework */,
+				62482E851F1E1493009C9996 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
