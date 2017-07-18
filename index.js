@@ -7,7 +7,7 @@ import {
 const JAnalytics = NativeModules.JAnalyticsModule;
 // const listeners = {};
 
-export default class JPush {
+export default class JAnalytics {
     /**
      * 初始化插件
      * 
