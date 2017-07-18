@@ -105,6 +105,7 @@ export default class JPush {
      * 
      * browseEvent = {
      *  type: 'browse',
+     *  id: String,
      *  extra: Object,  // 附加键值对，格式 {String: String}
      *  name: String,
      *  contentType: String,
