@@ -95,7 +95,7 @@ export default class JPush {
      *  type: 'purchase', // 必填
      *  extra: Object,  // 附加键值对，格式 {String: String}
      *  goodsType: String,
-     *  goodsID: String,
+     *  goodsId: String,
      *  goodsName: String,
      *  success: Boolen,
      *  price: float,
@@ -123,8 +123,8 @@ export default class JPush {
      *  value: float
      * }
      */
-    static eventRecord(event) {
-        JAnalytics.eventRecord(event);
+    static postEvent(event) {
+        JAnalytics.postEvent(event);
     }
     
 }

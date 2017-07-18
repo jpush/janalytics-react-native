@@ -1,4 +1,4 @@
-package com.pushdemo;
+package com.janalytics.demo;
 
 import android.os.Bundle;
 import android.util.Log;

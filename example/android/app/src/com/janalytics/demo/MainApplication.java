@@ -1,4 +1,4 @@
-package com.pushdemo;
+package com.janalytics.demo;
 
 import android.app.Application;
 
@@ -11,11 +11,14 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-import cn.jiguang.share.android.api.JShareInterface;
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import cn.jpush.reactnativejanalytics.JAnalyticsPackage;
 
 
 public class MainApplication extends Application implements ReactApplication {
 
+    private static boolean SHUTDOWN_LOG = false;
+    private static boolean SHUTDOWN_TOAST = false;
 
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
@@ -28,7 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
-                    new MainReactPackage()
+                    new MainReactPackage(),
+                    new JAnalyticsPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG)
             );
         }
     };
@@ -43,7 +47,7 @@ public class MainApplication extends Application implements ReactApplication {
         super.onCreate();
         SoLoader.init(this, false);
 //        在 Init 之前调用，设置为 true，则会打印 debug 级别日志，否则只会打印 warning 级别以上的日志
-//        JShareInterface.setDebugMode(true);
-        JShareInterface.init(this);
+//        JAnalyticsInterface.setDebugMode(true);
+        JAnalyticsInterface.init(this);
     }
 }

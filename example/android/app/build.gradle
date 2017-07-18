@@ -87,7 +87,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.share.demo"
+        applicationId "com.janalytics.demo"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -96,10 +96,8 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
         manifestPlaceholders = [
-                JSHARE_PKGNAME: "com.share.demo",
                 JPUSH_APPKEY: "d4ee2375846bc30fa51334f5",	//在此替换你的APPKey
                 APP_CHANNEL: "developer-default",		//应用渠道号
-                TENCENT_APPID: "your tencent app id"
         ]
     }
     splits {
