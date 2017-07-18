@@ -19,7 +19,7 @@ import cn.jiguang.analytics.android.api.RegisterEvent;
 
 public class JAnalyticsModule extends ReactContextBaseJavaModule {
 
-    private static final String JANALYTICS_NAME = "RCTJAnalytics";
+    private static final String JANALYTICS_NAME = "RCTJAnalyticsModule";
 
     public JAnalyticsModule(ReactApplicationContext reactContext) {
         super(reactContext);
