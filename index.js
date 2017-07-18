@@ -4,7 +4,7 @@ import {
 	DeviceEventEmitter
 } from 'react-native';
 
-const JAnalytics = NativeModules.RCTJAnalytics;
+const JAnalytics = NativeModules.JAnalyticsModule;
 // const listeners = {};
 
 export default class JPush {
