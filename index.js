@@ -100,6 +100,7 @@ export default class JPush {
      *  success: Boolen,
      *  price: float,
      *  currency: String, // CNY, USD
+     *  count: int
      * }
      * 
      * browseEvent = {
@@ -120,7 +121,7 @@ export default class JPush {
      *  type: 'calculate',
      *  extra: Object,  // 附加键值对，格式 {String: String}
      *  id: String,
-     *  value: float
+     *  value: double
      * }
      */
     static postEvent(event) {
