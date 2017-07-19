@@ -4,7 +4,7 @@ import {
 	DeviceEventEmitter
 } from 'react-native';
 
-const JAnalytics = NativeModules.JAnalyticsModule;
+const JAnalyticsModule = NativeModules.JAnalyticsModule;
 // const listeners = {};
 
 export default class JAnalytics {
@@ -16,7 +16,7 @@ export default class JAnalytics {
      * }
      */
     static setup(params) {
-        JAnalytics.setup(parma);
+        JAnalyticsModule.setup(parma);
     }
     
     /**
@@ -28,7 +28,7 @@ export default class JAnalytics {
      * 
      */
     static startLogPageView(params) {
-        JAnalytics.startLogPageView(pageName);
+        JAnalyticsModule.startLogPageView(pageName);
     }
 
     /**
@@ -39,7 +39,7 @@ export default class JAnalytics {
      * }
      */
     static stopLogPageView(pageName) {
-        JAnalytics.stopLogPageView(pageName);
+        JAnalyticsModule.stopLogPageView(pageName);
     }
 
     /**
@@ -51,14 +51,14 @@ export default class JAnalytics {
      * }
      */
     static uploadLocation(params) {
-        JAnalytics.uploadLocation(params);
+        JAnalyticsModule.uploadLocation(params);
     }
 
     /**
      * 开启Crash日志收集，默认是关闭状态.
      */
     static crashLogON() {
-        JAnalytics.crashLogON();
+        JAnalyticsModule.crashLogON();
     }
 
     /**
@@ -69,12 +69,12 @@ export default class JAnalytics {
      * }
      */
     static setDebug(params) {
-        JAnalytics.setDebug(params);
+        JAnalyticsModule.setDebug(params);
     }
 
     /**
      * 上报事件
-     * 
+     * 除了 extra 其他都是必填
      * @param {object} event 可以为如下 5 种事件
      * 
      * loginEvent = {
@@ -126,7 +126,7 @@ export default class JAnalytics {
      * }
      */
     static postEvent(event) {
-        JAnalytics.postEvent(event);
+        JAnalyticsModule.postEvent(event);
     }
     
 }

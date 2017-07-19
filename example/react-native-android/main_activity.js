@@ -44,12 +44,13 @@ export default class MainActivity extends React.Component {
 
   onPurchasePress = () => {
     var PurchaseEvent = {
+      goodsId: '123',
       type: 'purchase',
       extra: {
         userId: 'user2'
       },
       goodsType: 'sports',
-      googsName: 'basketball',
+      goodsName: 'basketball',
       price: 300,
       currency: 'CNY',
       count: 1,

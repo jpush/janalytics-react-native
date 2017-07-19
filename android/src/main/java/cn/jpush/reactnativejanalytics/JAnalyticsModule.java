@@ -80,7 +80,8 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
                 String name = map.getString("name");
                 String contentType = map.getString("contentType");
                 float duration = (float) map.getDouble("duration");
-                BrowseEvent browseEvent = new BrowseEvent(id, name, type, duration);
+                BrowseEvent browseEvent = new BrowseEvent(id, name, contentType, duration);
+                sendEvent(browseEvent, map);
                 break;
             case "count":
                 id = map.getString("id");
@@ -96,13 +97,13 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
     }
 
     private void sendEvent(Event event, ReadableMap map) {
-        Logger.d("JAnalyticsModule", "sending event: " + event);
         ReadableMap extra = map.getMap("extra");
         ReadableMapKeySetIterator iterator = extra.keySetIterator();
         while (iterator.hasNextKey()) {
             String key = iterator.nextKey();
             event.addKeyValue(key, extra.getString(key));
         }
+        Logger.d("JAnalyticsModule", "sending event: " + event);
         JAnalyticsInterface.onEvent(getReactApplicationContext(), event);
     }
 }

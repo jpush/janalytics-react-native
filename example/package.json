@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "janalytics-react-native": "0.0.1",
+    "janalytics-react-native": "0.0.2",
+    "jcore-react-native": "^1.1.5",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.2",
     "react-navigation": "^1.0.0-beta.11"
