@@ -21,5 +21,22 @@
   "bugs": {
     "url": "https://github.com/jpush/janalytics-react-native/issues"
   },
-  "homepage": "https://github.com/jpush/janalytics-react-native#readme"
+  "homepage": "https://github.com/jpush/janalytics-react-native#readme",
+  "rnpm": {
+    "ios": {
+      "sharedLibraries": [
+        "libz",
+        "CoreTelephony",
+        "Security",
+        "CFNetwork",
+        "CoreFoundation",
+        "SystemConfiguration",
+        "Foundation",
+        "UIKit",
+        "libresolv",
+        "CoreGraphics",
+        "CoreLocation"
+      ]
+    }
+  }
 }
