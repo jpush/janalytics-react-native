@@ -43,10 +43,6 @@ RCT_EXPORT_MODULE();
   return self;
 }
 
-RCT_EXPORT_METHOD(onClick){
-  NSLog(@"on click");
-}
-
 RCT_EXPORT_METHOD(setup:(NSDictionary *)param){
   JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
   if (param[@"appKey"]) {
@@ -101,13 +97,13 @@ RCT_EXPORT_METHOD(setDebug:(NSDictionary *)param){
   [JANALYTICSService setDebug: enable];
 }
 
-RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
+RCT_EXPORT_METHOD(postEvent:(NSDictionary *)param){
   NSString *type = @"";
   if (param[@"type"]) {
     type = param[@"type"];
   }
   
-  if ([type isEqualToString: @""]) {
+  if ([type isEqualToString: @"login"]) {
     JANALYTICSLoginEvent *loginEvent = [[JANALYTICSLoginEvent alloc] init];
     
     if (param[@"extra"]) {
@@ -128,7 +124,7 @@ RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
     [JANALYTICSService eventRecord: loginEvent];
   }
   
-  if ([type isEqualToString: @"type"]) {
+  if ([type isEqualToString: @"register"]) {
     JANALYTICSRegisterEvent *registerEvent = [[JANALYTICSRegisterEvent alloc] init];
     
     if (param[@"extra"]) {
@@ -148,7 +144,7 @@ RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
     [JANALYTICSService eventRecord: registerEvent];
   }
   
-  if ([type isEqualToString: @""]) {
+  if ([type isEqualToString: @"purchase"]) {
     JANALYTICSPurchaseEvent *purchaseEvent = [[JANALYTICSPurchaseEvent alloc] init];
     if (param[@"extra"]) {
       NSDictionary *extra = param[@"extra"];
@@ -193,7 +189,7 @@ RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
     [JANALYTICSService eventRecord: purchaseEvent];
   }
   
-  if ([type isEqualToString: @""]) {
+  if ([type isEqualToString: @"browse"]) {
 
     JANALYTICSBrowseEvent *browseEvent = [[JANALYTICSBrowseEvent alloc] init];
     if (param[@"extra"]) {
@@ -222,7 +218,7 @@ RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
     [JANALYTICSService eventRecord: browseEvent];
   }
   
-  if ([type isEqualToString: @""]) {
+  if ([type isEqualToString: @"count"]) {
     JANALYTICSCountEvent *countEvent = [[JANALYTICSCountEvent alloc] init];
     if (param[@"extra"]) {
       NSDictionary *extra = param[@"extra"];
@@ -235,7 +231,7 @@ RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
     [JANALYTICSService eventRecord: countEvent];
   }
   
-  if ([type isEqualToString: @""]) {
+  if ([type isEqualToString: @"calculate"]) {
     JANALYTICSCalculateEvent *calculateEvent = [[JANALYTICSCalculateEvent alloc] init];
     if (param[@"extra"]) {
       NSDictionary *extra = param[@"extra"];
