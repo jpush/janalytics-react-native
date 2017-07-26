@@ -8,6 +8,8 @@ import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 
 import java.lang.Override;
 
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+
 
 public class MainActivity extends ReactActivity implements DefaultHardwareBackBtnHandler {
 
@@ -57,11 +59,13 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
     @Override
     protected void onResume() {
         super.onResume();
+        JAnalyticsInterface.onPageStart(this, this.getClass().getCanonicalName());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        JAnalyticsInterface.onPageEnd(this, this.getClass().getCanonicalName());
     }
 
 }
