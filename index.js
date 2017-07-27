@@ -16,7 +16,7 @@ export default class JAnalytics {
      * }
      */
     static setup(params) {
-        JAnalyticsModule.setup(parma);
+        JAnalyticsModule.setup(params);
     }
     
     /**
@@ -28,7 +28,7 @@ export default class JAnalytics {
      * 
      */
     static startLogPageView(params) {
-        JAnalyticsModule.startLogPageView(pageName);
+        JAnalyticsModule.startLogPageView(params);
     }
 
     /**
@@ -38,8 +38,8 @@ export default class JAnalytics {
      *  pageName: Stirng   // 页面名称，用于标识页面
      * }
      */
-    static stopLogPageView(pageName) {
-        JAnalyticsModule.stopLogPageView(pageName);
+    static stopLogPageView(params) {
+        JAnalyticsModule.stopLogPageView(params);
     }
 
     /**
