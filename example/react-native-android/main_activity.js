@@ -18,6 +18,20 @@ export default class MainActivity extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    var param = {
+      pageName: "main"
+    };
+    JAnalyticsModule.startLogPageView(param);
+  }
+
+  componentWillUnmount() {
+    var param = {
+      pageName: "main"
+    };
+    JAnalyticsModule.stopLogPageView(param);
+  }
+
   onLoginPress = () => {
     var LoginEvent = {
       type: 'login',

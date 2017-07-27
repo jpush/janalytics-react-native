@@ -106,4 +106,26 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
         Logger.d("JAnalyticsModule", "sending event: " + event);
         JAnalyticsInterface.onEvent(getReactApplicationContext(), event);
     }
+
+    /**
+     * 开始页面统计，和 stopLogPageView 成对调用，需要在页面的生命周期中调用，否则会对生命周期造成影响。
+     * @param map includes pageName
+     */
+    @ReactMethod
+    public void startLogPageView(ReadableMap map) {
+        Logger.i(JANALYTICS_NAME, "Starting page statistics");
+        String name = map.getString("pageName");
+        JAnalyticsInterface.onPageStart(getCurrentActivity(), name);
+    }
+
+    /**
+     * 结束页面统计，和 startLogPageView 成对调用，需要在页面的生命周期中调用，否则会对生命周期造成影响。
+     * @param map includes pageName
+     */
+    @ReactMethod
+    public void stopLogPageView(ReadableMap map) {
+        Logger.i(JANALYTICS_NAME, "Stopping page statistics");
+        String name = map.getString("pageName");
+        JAnalyticsInterface.onPageEnd(getCurrentActivity(), name);
+    }
 }
