@@ -4,12 +4,19 @@
 
 ```
 npm install janalytics-react-native --save
-npm install jcore-react-native@1.1.5 --save
+npm install jcore-react-native --save
 react-native link
 ```
 
 ## Usage
 
+### Android
+
+- [Checkout settings.gradle and build.gradle](./docs/AndroidConfig.md) 
+
+- [Add JAnalyticsPackage](./docs/JAnalyticsPackage.md)
+
+### Common
 - Import JShareModule:
 
   > your component.js
