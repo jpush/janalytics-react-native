@@ -1,0 +1,45 @@
+{
+  "name": "janalytics-react-native",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpush/janalytics-react-native.git"
+  },
+  "keywords": [
+    "janalytics"
+  ],
+  "author": "KenChoi, HuminiOS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpush/janalytics-react-native/issues"
+  },
+  "homepage": "https://github.com/jpush/janalytics-react-native#readme",
+  "peerDependencies": {
+		"jcore-react-native": ">= 1.0.0"
+	},
+  "rnpm": {
+    "ios": {
+      "sharedLibraries": [
+        "libz",
+        "CoreTelephony",
+        "Security",
+        "CFNetwork",
+        "CoreFoundation",
+        "SystemConfiguration",
+        "Foundation",
+        "UIKit",
+        "libresolv",
+        "CoreGraphics",
+        "CoreLocation"
+      ]
+    }
+  }
+}
