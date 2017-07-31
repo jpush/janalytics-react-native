@@ -8,15 +8,15 @@ npm install jcore-react-native --save
 react-native link
 ```
 
-## Usage
+## Manually Configure Part
 
 ### Android
 
 - [Checkout settings.gradle and build.gradle](./docs/AndroidConfig.md) 
 
-- [Add JAnalyticsPackage](./docs/JAnalyticsPackage.md)
+- [Add JAnalyticsPackage, don't forget parameters!](./docs/JAnalyticsPackage.md)
 
-### Common
+## Usage
 - Import JShareModule:
 
   > your component.js
