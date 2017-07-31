@@ -62,7 +62,12 @@ export default class MainActivity extends React.Component {
       goodsId: '123',
       type: 'purchase',
       extra: {
-        userId: 'user2'
+        userId: 'user2',
+        customKey1: 'custom var1',
+        customKey2: 'custom var2',
+        customKey3: 'custom var3',
+        customKey4: 'custom var4',
+        customKey5: 'custom var5',
       },
       goodsType: 'sports',
       goodsName: 'basketball',
