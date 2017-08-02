@@ -17,7 +17,7 @@ react-native link
 - [Add JAnalyticsPackage, don't forget parameters!](./docs/JAnalyticsPackage.md)
 
 ## Usage
-- Import JShareModule:
+- Import JAnalyticsModule:
 
   > your component.js
 
