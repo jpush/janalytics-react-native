@@ -46,7 +46,6 @@
 		62482DEB1F1DB230009C9996 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482DEA1F1DB230009C9996 /* CFNetwork.framework */; };
 		62482DED1F1DB236009C9996 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482DEC1F1DB236009C9996 /* libz.tbd */; };
 		62482DEF1F1DB23D009C9996 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482DEE1F1DB23D009C9996 /* libresolv.tbd */; };
-		6249527D1F0E085900C8DBDD /* jcore-ios-1.1.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6249527B1F0E085900C8DBDD /* jcore-ios-1.1.5.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		D9FF9FD27C164D97ADC65AFA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9303C1F01D3E46DF9FB4188F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
@@ -283,7 +282,6 @@
 		62482DEA1F1DB230009C9996 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		62482DEC1F1DB236009C9996 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		62482DEE1F1DB23D009C9996 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		6249527B1F0E085900C8DBDD /* jcore-ios-1.1.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.5.a"; sourceTree = "<group>"; };
 		6A90C1E07DF34D8CB631D90D /* RCTJAnalyticsModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTJAnalyticsModule.xcodeproj; path = "../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		800C6554B3344A4F8FB9F38F /* libRCTJAnalyticsModule.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTJAnalyticsModule.a; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
-				6249527D1F0E085900C8DBDD /* jcore-ios-1.1.5.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
@@ -439,7 +436,6 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				6249527B1F0E085900C8DBDD /* jcore-ios-1.1.5.a */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
