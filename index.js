@@ -43,7 +43,7 @@ export default class JAnalytics {
     }
 
     /**
-     * 上报位置信息
+     * 上报位置信息 iOS Only
      * 
      * @param {object} params = {
      *  latitude: float   // 经度
