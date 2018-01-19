@@ -3,6 +3,10 @@
 > your project/android/app/src…/MainApplication.java
 
 ```
+// 需要 import JAnalyticsInterface 和 JAnalyticsPackage
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import cn.jpush.reactnativejanalytics.JAnalyticsPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
     // 是否关闭 Log，默认不关闭
