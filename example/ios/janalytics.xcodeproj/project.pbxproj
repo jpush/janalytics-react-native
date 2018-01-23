@@ -47,6 +47,7 @@
 		62482DED1F1DB236009C9996 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482DEC1F1DB236009C9996 /* libz.tbd */; };
 		62482DEF1F1DB23D009C9996 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482DEE1F1DB23D009C9996 /* libresolv.tbd */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		C0905648BABA4B49B264C125 /* libRCTJCoreModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1774468AC4844694B4C1135E /* libRCTJCoreModule.a */; };
 		D9FF9FD27C164D97ADC65AFA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9303C1F01D3E46DF9FB4188F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
@@ -233,6 +234,13 @@
 			remoteGlobalIDString = 62482DF91F1DE72F009C9996;
 			remoteInfo = RCTJAnalyticsModule;
 		};
+		627664B91FD9434300F81594 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 468B0C307B5643E8910C7A67 /* RCTJCoreModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6212E9B41F3990DC00BDF51A;
+			remoteInfo = RCTJCoreModule;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -269,8 +277,10 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = janalytics/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = janalytics/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1774468AC4844694B4C1135E /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTJCoreModule.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* janalytics-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "janalytics-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* janalytics-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "janalytics-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		468B0C307B5643E8910C7A67 /* RCTJCoreModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTJCoreModule.xcodeproj; path = "../node_modules/jcore-react-native/ios/RCTJCoreModule.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		62482DDC1F1DB1FA009C9996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		62482DDE1F1DB1FF009C9996 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -325,6 +335,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				53B45FF05D1C46988E5DD7CB /* libRCTJAnalyticsModule.a in Frameworks */,
 				D9FF9FD27C164D97ADC65AFA /* CoreTelephony.framework in Frameworks */,
+				C0905648BABA4B49B264C125 /* libRCTJCoreModule.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +505,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		627664691FD93A4B00F81594 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				800C6554B3344A4F8FB9F38F /* libRCTJAnalyticsModule.a */,
+				1774468AC4844694B4C1135E /* libRCTJCoreModule.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		627664B61FD9434300F81594 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				627664BA1FD9434300F81594 /* libRCTJCoreModule.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +546,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				6A90C1E07DF34D8CB631D90D /* RCTJAnalyticsModule.xcodeproj */,
+				468B0C307B5643E8910C7A67 /* RCTJCoreModule.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -539,6 +568,7 @@
 				00E356EF1AD99517003FC87E /* janalyticsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				62482DDB1F1DB1FA009C9996 /* Frameworks */,
+				627664691FD93A4B00F81594 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -689,6 +719,10 @@
 				{
 					ProductGroup = 625C15701F1F4AEE00FA1D4B /* Products */;
 					ProjectRef = 6A90C1E07DF34D8CB631D90D /* RCTJAnalyticsModule.xcodeproj */;
+				},
+				{
+					ProductGroup = 627664B61FD9434300F81594 /* Products */;
+					ProjectRef = 468B0C307B5643E8910C7A67 /* RCTJCoreModule.xcodeproj */;
 				},
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
@@ -898,6 +932,13 @@
 			remoteRef = 625C15791F1F4AEE00FA1D4B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		627664BA1FD9434300F81594 /* libRCTJCoreModule.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTJCoreModule.a;
+			remoteRef = 627664B91FD9434300F81594 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1054,12 +1095,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = janalyticsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1080,12 +1123,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = janalyticsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1107,6 +1152,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = janalytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1133,6 +1179,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = janalytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1165,11 +1212,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = "janalytics-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1199,11 +1248,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/janalytics-react-native/ios/RCTJAnalyticsModule",
+					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 				);
 				INFOPLIST_FILE = "janalytics-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1234,6 +1285,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.janalytics-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1258,6 +1310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.janalytics-tvOSTests";
