@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jpush/janalytics-react-native#readme",
   "peerDependencies": {
-    "jcore-react-native": ">= 1.2.0"
+    "jcore-react-native": ">= 1.2.4"
   },
   "rnpm": {
     "ios": {
