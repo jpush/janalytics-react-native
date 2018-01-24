@@ -29,7 +29,25 @@ react-native link
 
 - You can refer to [example](./example)
 
+##### Add with CocoaPods(if you integrated react-native to native iOS project)
+
+Add the JAnalyticsRN pod to your list of application pods in your Podfile, using the path from the Podfile to the installed module:
+
+```
+pod 'JAnalyticsRN', :path => '../node_modules/janalytics-react-native'
+pod 'JCoreRN', :path => '../node_modules/jcore-react-native'
+```
+
+Install pods as usual::
+
+```
+pod install
+```
+
+## 
+
 ## API
+
 - refer to [index.js](./index.js)
 
 
