@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		62482DFE1F1DE72F009C9996 /* RCTJAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 62482DFD1F1DE72F009C9996 /* RCTJAnalyticsModule.m */; };
 		62482DFF1F1DE72F009C9996 /* RCTJAnalyticsModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62482DFC1F1DE72F009C9996 /* RCTJAnalyticsModule.h */; };
-		62482E091F1DE78D009C9996 /* janalytics-ios-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E051F1DE78D009C9996 /* janalytics-ios-1.1.3.a */; };
+		62482E091F1DE78D009C9996 /* libjanalytics-ios-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E051F1DE78D009C9996 /* libjanalytics-ios-1.1.3.a */; };
 		62482E881F1E149B009C9996 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E871F1E149B009C9996 /* CoreTelephony.framework */; };
 		62482E8A1F1E14A1009C9996 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E891F1E14A1009C9996 /* Security.framework */; };
 		62482E8C1F1E14A6009C9996 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62482E8B1F1E14A6009C9996 /* CFNetwork.framework */; };
@@ -38,7 +38,7 @@
 		62482DF91F1DE72F009C9996 /* libRCTJAnalyticsModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJAnalyticsModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		62482DFC1F1DE72F009C9996 /* RCTJAnalyticsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTJAnalyticsModule.h; sourceTree = "<group>"; };
 		62482DFD1F1DE72F009C9996 /* RCTJAnalyticsModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTJAnalyticsModule.m; sourceTree = "<group>"; };
-		62482E051F1DE78D009C9996 /* janalytics-ios-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "janalytics-ios-1.1.3.a"; sourceTree = "<group>"; };
+		62482E051F1DE78D009C9996 /* libjanalytics-ios-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libjanalytics-ios-1.1.3.a"; sourceTree = "<group>"; };
 		62482E061F1DE78D009C9996 /* JANALYTICSEventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JANALYTICSEventObject.h; sourceTree = "<group>"; };
 		62482E071F1DE78D009C9996 /* JANALYTICSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JANALYTICSService.h; sourceTree = "<group>"; };
 		62482E851F1E1493009C9996 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -68,7 +68,7 @@
 				62482E8C1F1E14A6009C9996 /* CFNetwork.framework in Frameworks */,
 				62482E8A1F1E14A1009C9996 /* Security.framework in Frameworks */,
 				62482E881F1E149B009C9996 /* CoreTelephony.framework in Frameworks */,
-				62482E091F1DE78D009C9996 /* janalytics-ios-1.1.3.a in Frameworks */,
+				62482E091F1DE78D009C9996 /* libjanalytics-ios-1.1.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 		62482DFB1F1DE72F009C9996 /* RCTJAnalyticsModule */ = {
 			isa = PBXGroup;
 			children = (
-				62482E051F1DE78D009C9996 /* janalytics-ios-1.1.3.a */,
+				62482E051F1DE78D009C9996 /* libjanalytics-ios-1.1.3.a */,
 				62482E061F1DE78D009C9996 /* JANALYTICSEventObject.h */,
 				62482E071F1DE78D009C9996 /* JANALYTICSService.h */,
 				62482DFC1F1DE72F009C9996 /* RCTJAnalyticsModule.h */,
