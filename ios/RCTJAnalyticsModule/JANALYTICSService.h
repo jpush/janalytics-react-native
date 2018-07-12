@@ -9,7 +9,7 @@
  * Copyright (c) 2016~ Shenzhen HXHG. All rights reserved.
  */
 
-#define JANALYTICS_VERSION_NUMBER 1.1.3
+#define JANALYTICS_VERSION_NUMBER 1.2.1
 
 #import <Foundation/Foundation.h>
 #import "JANALYTICSEventObject.h"
@@ -49,6 +49,7 @@
  * @abstract 停止记录页面停留
  *
  * @param pageName 页面
+ * @discussion 停止后，默认即时上报此页面。可通过[setFrequency:]方法更改为周期性上报策略
  */
 + (void)stopLogPageView:(NSString *)pageName;
 
@@ -70,6 +71,35 @@
  */
 + (void)setLocation:(CLLocation *)location;
 
+/*！事件统计
+ * @param event 上报的事件模型
+ * @discussion 默认即时上报事件。可通过[setFrequency:]方法更改为周期性上报策略
+ */
++ (void)eventRecord:(JANALYTICSEventObject *)event;
+
+/**
+ 设置用户信息
+
+ @param userInfo 用户信息模型
+ @param completion 错误码和错误信息callback
+ */
++ (void)identifyAccount:(JANALYTICSUserInfo *)userInfo with:(void (^)(NSInteger err, NSString * msg))completion;
+
+/**
+ 解绑当前的用户信息
+ */
++ (void)detachAccount:(void (^)(NSInteger err, NSString * msg))completion;
+
+/**
+ 设置周期上报频率
+ 默认为未设置频率，即时上报
+ @param frequency 周期上报频率单位秒
+ 频率区间：0 或者 10 < frequency < 24*60*60
+ 可以设置为0，即表示取消周期上报频率，改为即时上报
+ e.g. 十分钟上报一次 [JANALYTICSService setFrequency:600];
+ */
++ (void)setFrequency:(NSUInteger)frequency;
+
 /*!
  * @abstract 开启Crash日志收集
  *
@@ -86,11 +116,6 @@
  * 请在发布产品时改为NO，避免产生不必要的IO
  */
 + (void)setDebug:(BOOL)enable;
-
-/*！事件统计
- * @param event 上报的事件模型
- */
-+ (void)eventRecord:(JANALYTICSEventObject *)event;
 
 @end
 

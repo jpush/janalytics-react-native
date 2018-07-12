@@ -113,3 +113,62 @@ typedef NS_ENUM(NSUInteger, JANALYTICSPurchaseCurrency) {
 @property (nonatomic, assign) CGFloat value;
 
 @end
+
+typedef NS_ENUM(NSUInteger, JANALYTICSSex) {
+  //未知的
+  JANALYTICSSexUnknown,
+  //男性
+  JANALYTICSSexMale,
+  //女性
+  JANALYTICSSexFemale,
+};
+
+typedef NS_ENUM(NSUInteger, JANALYTICSPaid) {
+  //未知
+  JANALYTICSPaidUnknown,
+  //付费
+  JANALYTICSPaidPaid,
+  //未付费
+  JANALYTICSPaidUnpaid,
+};
+
+/**
+ 用户信息
+ */
+@interface JANALYTICSUserInfo : NSObject
+
+/**
+ 账号ID、必填非空
+ */
+@property (nonatomic, copy, nonnull) NSString * accountID;
+/*
+ * 以下为极光内置用户维度
+ * 当主动设置为nil时会删除该维度
+ */
+//账号创建时间、时间戳
+@property (nonatomic, assign) NSTimeInterval creationTime;
+//不能使用枚举意外的值
+@property (nonatomic, assign) JANALYTICSSex sex;
+//出生年月，yyyyMMdd格式校验
+@property (nonatomic, copy, nullable) NSString * birthdate;
+//不能使用枚举以外的值
+@property (nonatomic, assign) JANALYTICSPaid paid;
+//手机号码
+@property (nonatomic, copy, nullable) NSString * phone;
+//email
+@property (nonatomic, copy, nullable) NSString * email;
+//用户名
+@property (nonatomic, copy, nullable) NSString * name;
+//微信id
+@property (nonatomic, copy, nullable) NSString * wechatID;
+//QQid
+@property (nonatomic, copy, nullable) NSString * qqID;
+//新浪微博id
+@property (nonatomic, copy, nullable) NSString * weiboID;
+
+//用户自定义维度 key-value value只能为NSNumber/NSString/nil
+//当value为nil时将会删除对应的维度
+- (void)setExtraObject:(nullable id)obj forKey:(nonnull NSString *)key;
+
+@end
+
