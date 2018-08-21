@@ -24,7 +24,8 @@ public class JAnalyticsPackage implements ReactPackage {
         });
     }
 
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
+    // @Override fix react native 0.47 issue
+public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
 
