@@ -115,7 +115,8 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
     public void startLogPageView(ReadableMap map) {
         Logger.i(JANALYTICS_NAME, "Starting page statistics");
         String name = map.getString("pageName");
-        JAnalyticsInterface.onPageStart(getCurrentActivity(), name);
+        if(getCurrentActivity() != null)
+            JAnalyticsInterface.onPageStart(getCurrentActivity(), name);
     }
 
     /**
@@ -126,6 +127,7 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
     public void stopLogPageView(ReadableMap map) {
         Logger.i(JANALYTICS_NAME, "Stopping page statistics");
         String name = map.getString("pageName");
-        JAnalyticsInterface.onPageEnd(getCurrentActivity(), name);
+        if (getCurrentActivity() != null)
+            JAnalyticsInterface.onPageEnd(getCurrentActivity(), name);
     }
 }
