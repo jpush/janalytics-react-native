@@ -1,6 +1,6 @@
 {
   "name": "janalytics-react-native",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "a janalytics plugin for react native application",
   "main": "index.js",
   "directories": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jpush/janalytics-react-native#readme",
   "peerDependencies": {
-    "jcore-react-native": ">= 1.2.4"
+    "jcore-react-native": ">= 1.2.11"
   },
   "rnpm": {
     "ios": {
