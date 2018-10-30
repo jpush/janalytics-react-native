@@ -9,6 +9,7 @@ const {
   Text,
   TouchableHighlight,
   StyleSheet,
+  ScrollView
 } = ReactNative;
 
 
@@ -116,9 +117,34 @@ export default class MainActivity extends React.Component {
     JAnalyticsModule.postEvent(BrowseEvent);
   }
 
+  onIdentifyAccount = () => {
+    JAnalyticsModule.identifyAccount({
+      accountID: 'accountID1',
+      name: 'name1',
+      creationTime: 12312123123,
+      sex: 1,
+      paid: 2,
+      birthdate: '19900101',
+      phone: '123414123',
+      email: '380108184@qq.com',
+      weiboID: 'weibo213123',
+      wechatID: 'wechatID21123',
+      qqID: 'qqid 1231',
+      extras: {
+          key1: 'value1',
+          key2: 2
+      }
+
+  }, () => {
+      console.log('identifyAccount success');
+  }, (errMsg) => {
+    console.log(`identifyAccount fail ${errMsg}`);
+  });
+  }
+
   render() {
     return (
-      <View>
+      <ScrollView>
         <TouchableHighlight 
           underlayColor = '#e4083f'
           activeOpacity = {0.5}
@@ -210,7 +236,16 @@ export default class MainActivity extends React.Component {
             Browse event
           </Text>
         </TouchableHighlight>
-      </View>
+        <TouchableHighlight 
+          underlayColor = "#e4083f"
+          activeOpacity = {0.5}
+          style = {styles.btnStyle}
+          onPress = {this.onIdentifyAccount}>
+          <Text style = {styles.btnTextStyle}>
+            identify account
+          </Text>
+        </TouchableHighlight>
+      </ScrollView>
     );
   }
 }
