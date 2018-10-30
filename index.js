@@ -128,5 +128,28 @@ export default class JAnalytics {
     static postEvent(event) {
         JAnalyticsModule.postEvent(event);
     }
+
+    /**
+     * 设置用户信息
+     * @param {Object} params = {
+     *  'accountID': String,            // 账号ID
+     *  'name': String,                 // 姓名
+     *  'creationTime': Number,         // 账号创建时间
+     *  'sex': Number,                  // 性别
+     *  'paid': Number,                 // 是否付费
+     *  'birthdate': Number,            // 出生年月
+     *  'phone': String,                // 手机号码
+     *  'email': String,                // 电子邮件
+     *  'weiboID': String,              // 新浪微博ID
+     *  'wechatID': String,             // 微信ID
+     *  'qqID': String,                 // QQ ID
+     *  'extras': object                // Optional. 扩展参数，类似 {'key1': 'value1'} , value 只能是 string 和 number
+     * }
+     * @param {Function} success = () => {}
+     * @param {Function} fail = () => {}
+     */
+    static identifyAccount(params, success, fail) {
+        JAnalyticsModule.identifyAccount(params, success, fail);   
+    }
     
 }
