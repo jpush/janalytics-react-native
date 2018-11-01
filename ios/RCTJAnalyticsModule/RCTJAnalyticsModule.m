@@ -294,4 +294,10 @@ RCT_EXPORT_METHOD(identifyAccount: (NSDictionary *)params
     }
   }];
 }
+
+RCT_EXPORT_METHOD(setAnalyticsReportPeriod: (NSDictionary *)params){
+  NSUInteger period = [params[@"period"] unsignedIntegerValue];
+  [JANALYTICSService setFrequency:period];
+}
+
 @end
