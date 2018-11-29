@@ -28,8 +28,8 @@ android {
 }
 ...
 dependencies {
-  compile project(':janalytics-react-native')
-  compile project(':jcore-react-native')
+  implementation project(':janalytics-react-native')
+  implementation project(':jcore-react-native')
 }
 ```
 
