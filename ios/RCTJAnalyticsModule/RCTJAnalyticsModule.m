@@ -250,4 +250,54 @@ RCT_EXPORT_METHOD(postEvent:(NSDictionary *)param){
   }
 }
 
+RCT_EXPORT_METHOD(identifyAccount: (NSDictionary *)params
+                  success: (RCTResponseSenderBlock)successCallback
+                  fail: (RCTResponseSenderBlock)failCallbak){
+  
+  JANALYTICSUserInfo *userInfo = [[JANALYTICSUserInfo alloc] init];
+  userInfo.accountID = params[@"accountID"];
+  userInfo.name = params[@"name"];
+  userInfo.creationTime = [params[@"creationTime"] doubleValue];
+  if ([params[@"sex"] intValue] == 1) {
+    userInfo.sex = JANALYTICSSexMale;
+  } else if ([params[@"creationTime"] intValue] == 2) {
+    userInfo.sex = JANALYTICSSexFemale;
+  } else {
+    userInfo.sex = JANALYTICSSexUnknown;
+  }
+  
+  if ([params[@"paid"] intValue] == 1) {
+    userInfo.paid = JANALYTICSPaidPaid;
+  } else if ([params[@"creationTime"] intValue] == 2) {
+    userInfo.paid = JANALYTICSPaidUnpaid;
+  } else {
+    userInfo.paid = JANALYTICSPaidUnknown;
+  }
+  
+  userInfo.birthdate = params[@"birthdate"];
+  userInfo.phone = params[@"phone"];
+  userInfo.email = params[@"email"];
+  userInfo.weiboID = params[@"weiboID"];
+  userInfo.wechatID = params[@"wechatID"];
+  userInfo.qqID = params[@"qqID"];
+  NSDictionary *extras = params[@"extras"];
+  for (NSString* key in extras.allKeys) {
+    [userInfo setExtraObject:extras[key] forKey:key];
+  }
+  
+  [JANALYTICSService identifyAccount:userInfo with:^(NSInteger err, NSString *msg) {
+    
+    if (err) {
+      failCallbak(@[msg]);
+    } else {
+      successCallback(@[]);
+    }
+  }];
+}
+
+RCT_EXPORT_METHOD(setAnalyticsReportPeriod: (NSDictionary *)params){
+  NSUInteger period = [params[@"period"] unsignedIntegerValue];
+  [JANALYTICSService setFrequency:period];
+}
+
 @end
