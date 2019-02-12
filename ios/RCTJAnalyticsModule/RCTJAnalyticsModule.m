@@ -45,8 +45,23 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(setup:(NSDictionary *)param){
   JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
-  if (param[@"appKey"]) {
-    config.appKey = param[@"appKey"];
+  NSString *appKey = param[@"appKey"];
+  if (appKey != nil && ![appKey isEqualToString:@""]) {
+    config.appKey = appKey;
+  } else {
+    // 如果param 中没有 appKey 这个字段会尝试在 JiGuangConfig.plist 文件中查找这个 appKey。
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"JiGuangConfig" ofType:@"plist"];
+    
+    if (!plistPath) {
+      NSLog(@"error: JiGuangConfig.plist not found");
+      return;
+    }
+    
+    NSMutableDictionary *fileConfig = [[NSMutableDictionary alloc] initWithContentsOfFile: plistPath];
+    if (fileConfig[@"appKey"]) {
+      config.appKey = fileConfig[@"appKey"];
+    }
+
   }
   [JANALYTICSService setupWithConfig:config];
 }
