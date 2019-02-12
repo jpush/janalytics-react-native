@@ -12,8 +12,12 @@ export default class JAnalytics {
   * 初始化插件
   *
   * @param {object} params = {
-  *  appKey: String       //极光控制台上注册的应用 appKey
+  *  appKey?: String       //极光控制台上注册的应用 appKey
   * }
+  * 
+  * NOTE:
+  * 当前版本 appKey 可以不传，iOS 中 params 中没有找到 appKey 字段
+  * 会在 JiGuangConfig.plist 中获取 appKey 这个字段
   */
   static setup(params) {
     JAnalyticsModule.setup(params);
