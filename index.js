@@ -138,7 +138,7 @@ export default class JAnalytics {
   * 动态配置channel，优先级比AndroidManifest里配置的高
   *
   * @param {object} params = {
-  *  'channel': String  //希望配置的channel
+  *  channel: String  //希望配置的channel
   * }
   */
   static setChannel(params) {
@@ -149,7 +149,7 @@ export default class JAnalytics {
   * 设置统计上报的自动周期，未调用前默认即时上报
   *
   * @param {object} params = {
-  *  'period': Number  //周期，单位秒，最小10秒，最大1天，超出范围会打印调用失败日志。传0表示统计数据即时上报
+  *  period: Number  //周期，单位秒，最小10秒，最大1天，超出范围会打印调用失败日志。传0表示统计数据即时上报
   * }
   */
   static setAnalyticsReportPeriod(params) {
@@ -159,18 +159,18 @@ export default class JAnalytics {
   /**
   * 设置用户信息
   * @param {Object} params = {
-  *  'accountID': String,            // 账号ID
-  *  'name': String,                 // 姓名
-  *  'creationTime': Number,         // 账号创建时间
-  *  'sex': Number,                  // 性别
-  *  'paid': Number,                 // 是否付费
-  *  'birthdate': String,            // 出生年月
-  *  'phone': String,                // 手机号码
-  *  'email': String,                // 电子邮件
-  *  'weiboID': String,              // 新浪微博ID
-  *  'wechatID': String,             // 微信ID
-  *  'qqID': String,                 // QQ ID
-  *  'extras': object                // Optional. 扩展参数，附加键值对，格式 {String: String}
+  *  accountID: String,            // 账号ID
+  *  name: String,                 // 姓名
+  *  creationTime: Number,         // 账号创建时间
+  *  sex: Number,                  // 性别
+  *  paid: Number,                 // 是否付费
+  *  birthdate: String,            // 出生年月
+  *  phone: String,                // 手机号码
+  *  email: String,                // 电子邮件
+  *  weiboID: String,              // 新浪微博ID
+  *  wechatID: String,             // 微信ID
+  *  qqID: String,                 // QQ ID
+  *  extras: object                // Optional. 扩展参数，附加键值对，格式 {String: String}
   * }
   * @param {Function} success = () => {}
   * @param {Function} fail = () => {}
