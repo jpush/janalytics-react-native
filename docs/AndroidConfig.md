@@ -22,7 +22,7 @@ android {
     ...
     manifestPlaceholders = [
       JPUSH_APPKEY: "your app key",	//在此替换你的APPKey
-      JPUSH_CHANNEL: "developer-default",		//应用渠道号, 默认即可
+      APP_CHANNEL: "developer-default",		//应用渠道号, 默认即可
     ]
   }
 }
@@ -31,6 +31,20 @@ dependencies {
   implementation project(':janalytics-react-native')
   implementation project(':jcore-react-native')
 }
+```
+
+## Checkout app's AndroidManifest.xml，add \<meta-data>。
+
+> your react native project/android/app/AndroidManifest.xml
+
+```
+    <application
+        ...
+        <!-- Required . Enable it you can get statistics data with channel -->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="${APP_CHANNEL}"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}"/>
+
+    </application>
 ```
 
 ​

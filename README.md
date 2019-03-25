@@ -41,7 +41,8 @@ pod install
   ```javascript
   ...
   import JAnalyticsModule from 'janalytics-react-native';
-  JAnalyticsModule.setup({appKey: "you appKey get from jiguang website"})  // iOS 端需要先调用该方法
+
+  JAnalyticsModule.setup({appKey: "you appKey get from jiguang website"}) 
   ```
 
 - You can refer to [example](./example)

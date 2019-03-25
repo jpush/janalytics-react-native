@@ -135,7 +135,7 @@ export default class JAnalytics {
 
   /**
    * Android Only
-  * 动态配置channel，优先级比AndroidManifest里配置的高
+  * 动态配置channel，优先级比AndroidManifest里配置的高,需要在初始化方法 setup 前调用
   *
   * @param {object} params = {
   *  channel: String  //希望配置的channel
