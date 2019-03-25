@@ -39,9 +39,11 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, false);
-//        在 Init 之前调用，设置为 true，则会打印 debug 级别日志，否则只会打印 warning 级别以上的日志
-//        JAnalyticsInterface.setDebugMode(true);
-        JAnalyticsInterface.init(this);
+//      在 Init 之前调用，设置为 true，则会打印 debug 级别日志，否则只会打印 warning 级别以上的日志
+//      JAnalyticsPackage.setDebugMode(true);
+
+//      如果需要动态设置 channel，请去掉这里的初始化。在 RN 层调用 setChannel 设置渠道后再调用 setup 进行初始化。
+        JAnalyticsPackage.init(this);
     }
 }
 ```
