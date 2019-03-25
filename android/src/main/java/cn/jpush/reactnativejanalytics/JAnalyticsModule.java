@@ -35,6 +35,11 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
         return JANALYTICS_NAME;
     }
 
+    @ReactMethod
+    public void setup(ReadableMap map) {
+        JAnalyticsInterface.init(getReactApplicationContext());
+    }
+
     /**
      * 开启 crash log 日志上报
      */
@@ -139,6 +144,7 @@ public class JAnalyticsModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setChannel(ReadableMap map) {
         String channel = map.getString("channel");
+        Logger.i(JANALYTICS_NAME, "setChannel"+channel);
         JAnalyticsInterface.setChannel(getCurrentActivity(), channel);
     }
 

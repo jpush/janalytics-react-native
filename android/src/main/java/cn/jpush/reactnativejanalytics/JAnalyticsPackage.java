@@ -10,11 +10,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+
 public class JAnalyticsPackage implements ReactPackage {
 
     public JAnalyticsPackage(boolean toastFlag, boolean logFlag) {
         Logger.SHUTDOWNTOAST = toastFlag;
         Logger.SHUTDOWNLOG = logFlag;
+        JAnalyticsInterface.setDebugMode(!logFlag);
     }
 
     @Override
