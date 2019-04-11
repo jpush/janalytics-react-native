@@ -10,7 +10,7 @@ var allowedInDevMode = true;
 JAnalytics.rnCrashLogON(allowedInDevMode)
 
 // 也可以自行将捕获到的异常主动递给sdk，不能同时开启JAnalytics.rnCrashLogON(allowedInDevMode)（仅ios）
-// import { setJSExceptionHandler } from '../../error_guard';
+// import { setJSExceptionHandler } from '../error_guard';
 // var allowedInDevMode = true;
 // setJSExceptionHandler((e, isFatal) => {
 //   if(isFatal){
