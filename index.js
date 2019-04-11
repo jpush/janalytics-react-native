@@ -7,6 +7,28 @@ import {
 const JAnalyticsModule = NativeModules.JAnalyticsModule;
 // const listeners = {};
 
+const noop = () => {};
+
+export const setJSExceptionHandler = (customHandler = noop, allowedInDevMode = false) => {
+    if (typeof allowedInDevMode !== "boolean" || typeof customHandler !== "function") {
+        return;
+    }
+    const allowed = allowedInDevMode ? true : !__DEV__;
+    if (allowed) {
+        // 设置错误处理函数
+        global.ErrorUtils.setGlobalHandler(customHandler);
+        // 改写 console.error，保证报错能被 ErrorUtils 捕获并调用错误处理函数处理
+        console.error = (message, error) => global.ErrorUtils.reportError(error);
+    }
+};
+
+// export const getJSExceptionHandler = () => global.ErrorUtils.getGlobalHandler();
+
+// export default {
+//     setJSExceptionHandler,
+//     getJSExceptionHandler,
+// };
+
 export default class JAnalytics {
   /**
   * 初始化插件
@@ -63,6 +85,24 @@ export default class JAnalytics {
   */
   static crashLogON() {
     JAnalyticsModule.crashLogON();
+  }
+
+  static collectRNCrash(params) {
+    if(Platform.OS === "ios"){
+      JAnalyticsModule.collectCrash(params);
+    }
+  }
+
+  static rnCrashLogON(allowedInDevMode){
+    if(Platform.OS === "ios"){
+      setJSExceptionHandler((e, isFatal) => {
+        var param = {
+          name: e.name+"",
+          message:e.message+""
+        }
+        JAnalyticsModule.collectCrash(param)
+      }, allowedInDevMode);
+    }
   }
 
   /**
