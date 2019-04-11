@@ -9,7 +9,7 @@ const JAnalyticsModule = NativeModules.JAnalyticsModule;
 
 const noop = () => {};
 
-export const setJSExceptionHandler = (customHandler = noop, allowedInDevMode = false) => {
+export const setJSExceptionHandler = (customHandler = noop, allowedInDevMode = true) => {
     if (typeof allowedInDevMode !== "boolean" || typeof customHandler !== "function") {
         return;
     }
@@ -106,9 +106,8 @@ export default class JAnalytics {
   * 
   * 如果开发者没有手动捕获错误日志，则使用此api即可
   * 
-  * @allowedInDevMode:Boolean //是否允许在开发模式下采集js错误日志上报
   */
-  static rnCrashLogON(allowedInDevMode){
+  static rnCrashLogON(){
     if(Platform.OS === "ios"){
       setJSExceptionHandler((e, isFatal) => {
         var param = {
@@ -116,7 +115,7 @@ export default class JAnalytics {
           message:e.message+""
         }
         JAnalyticsModule.collectCrash(param)
-      }, allowedInDevMode);
+      }, true);
     }
   }
 
