@@ -103,6 +103,21 @@ RCT_EXPORT_METHOD(crashLogON){
   [JANALYTICSService crashLogON];
 }
 
+RCT_EXPORT_METHOD(collectCrash:(NSDictionary *)param){
+    NSString *name = nil;
+    NSString *reason = nil;
+    if (param[@"name"]) {
+        name = param[@"name"];
+    }
+    if (param[@"message"]) {
+        reason = param[@"message"];
+    }
+    //NSLog(@"name:%@, reason:%@",name,reason);
+    //NSDictionary *info = @{@"error_name":name, @"error_reason":reason};
+    NSString *tmp = [NSString stringWithFormat:@"%@: %@", name, reason];
+    @throw [NSException exceptionWithName:name reason:tmp userInfo:nil];
+}
+
 RCT_EXPORT_METHOD(setDebug:(NSDictionary *)param){
   BOOL enable = false;
   if (param[@"enable"]) {
