@@ -87,12 +87,27 @@ export default class JAnalytics {
     JAnalyticsModule.crashLogON();
   }
 
+  /**
+  * 手动将捕获到的错误日志交给原生层上报(仅ios)
+  *
+  * @param {object} params = {
+  *  name: string       //error.name
+  *  message: string    //error.message
+  * }
+  */
   static collectRNCrash(params) {
     if(Platform.OS === "ios"){
       JAnalyticsModule.collectCrash(params);
     }
   }
 
+  /**
+  * 开启js错误错误日志采集上报(仅ios)
+  * 
+  * 如果开发者没有手动捕获错误日志，则使用此api即可
+  * 
+  * @allowedInDevMode:Boolean //是否允许在开发模式下采集js错误日志上报
+  */
   static rnCrashLogON(allowedInDevMode){
     if(Platform.OS === "ios"){
       setJSExceptionHandler((e, isFatal) => {
