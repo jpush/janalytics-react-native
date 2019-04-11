@@ -5,9 +5,9 @@ import ReactNative from 'react-native';
 import JAnalytics from 'janalytics-react-native';
 
 
+// 如果错误被红屏捕捉，可以选择release模式测试或者关闭红屏模式让应用崩溃
 // 开启rn错误日志采集（仅ios）
-var allowedInDevMode = true;
-JAnalytics.rnCrashLogON(allowedInDevMode)
+JAnalytics.rnCrashLogON()
 
 // 也可以自行将捕获到的异常主动递给sdk，不能同时开启JAnalytics.rnCrashLogON(allowedInDevMode)（仅ios）
 // import { setJSExceptionHandler } from '../error_guard';
@@ -33,13 +33,12 @@ const {
 } = ReactNative;
 
 
-
 export default class MainActivity extends React.Component {
   constructor(props) {
     super(props);
-    JAnalyticsModule.setup({appKey: 'a1703c14b186a68a66ef86c1'})
-    JAnalyticsModule.setDebug({enable: true})
-    JAnalyticsModule.crashLogON()
+    JAnalytics.setup({appKey: 'a1703c14b186a68a66ef86c1'})
+    JAnalytics.setDebug({enable: true})
+    JAnalytics.crashLogON()
   }
 
   onStartLogPageView = () => {
