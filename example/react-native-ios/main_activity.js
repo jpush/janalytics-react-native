@@ -5,7 +5,7 @@ import ReactNative from 'react-native';
 import JAnalytics from 'janalytics-react-native';
 
 
-// 如果错误被红屏捕捉，可以使用release模式测试或者关闭红屏模式
+// 如果错误被红屏捕捉，可以选择release模式测试或者关闭红屏模式让应用崩溃
 // 开启rn错误日志采集（仅ios）
 JAnalytics.rnCrashLogON()
 
@@ -31,7 +31,6 @@ const {
   StyleSheet,
   ScrollView
 } = ReactNative;
-
 
 
 export default class MainActivity extends React.Component {

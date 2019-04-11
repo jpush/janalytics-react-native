@@ -9,7 +9,7 @@ const JAnalyticsModule = NativeModules.JAnalyticsModule;
 
 const noop = () => {};
 
-export const setJSExceptionHandler = (customHandler = noop, allowedInDevMode = true) => {
+export const setJSExceptionHandler = (customHandler = noop, allowedInDevMode = false) => {
     if (typeof allowedInDevMode !== "boolean" || typeof customHandler !== "function") {
         return;
     }
