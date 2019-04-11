@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactNative from 'react-native';
-import JAnalyticsModule from 'janalytics-react-native';
+import JAnalytics from 'janalytics-react-native';
 
 const {
   View,
@@ -22,14 +22,14 @@ export default class MainActivity extends React.Component {
     var param = {
       pageName: "main"
     };
-    JAnalyticsModule.startLogPageView(param);
+    JAnalytics.startLogPageView(param);
   }
 
   componentWillUnmount() {
     var param = {
       pageName: "main"
     };
-    JAnalyticsModule.stopLogPageView(param);
+    JAnalytics.stopLogPageView(param);
   }
 
   onLoginPress = () => {
@@ -41,7 +41,7 @@ export default class MainActivity extends React.Component {
       method: "login",
       success: true
     };
-    JAnalyticsModule.postEvent(LoginEvent);
+    JAnalytics.postEvent(LoginEvent);
   }
 
   onRegisterPress = () => {
@@ -53,7 +53,7 @@ export default class MainActivity extends React.Component {
       method: "register",
       success: true
     };
-    JAnalyticsModule.postEvent(RegisterEvent);
+    JAnalytics.postEvent(RegisterEvent);
   }
 
   onPurchasePress = () => {
@@ -70,7 +70,7 @@ export default class MainActivity extends React.Component {
       count: 1,
       success: true
     };
-    JAnalyticsModule.postEvent(PurchaseEvent);
+    JAnalytics.postEvent(PurchaseEvent);
   }
 
   onCountPress = () => {
@@ -81,7 +81,7 @@ export default class MainActivity extends React.Component {
       },
       type: 'count'
     };
-    JAnalyticsModule.postEvent(CountEvent);
+    JAnalytics.postEvent(CountEvent);
   }
 
   onCalculatePress = () => {
@@ -93,7 +93,7 @@ export default class MainActivity extends React.Component {
       type: 'calculate',
       value: 200
     };
-    JAnalyticsModule.postEvent(CalculateEvent);
+    JAnalytics.postEvent(CalculateEvent);
   }
 
   onBrowsePress = () => {
@@ -107,7 +107,7 @@ export default class MainActivity extends React.Component {
       contentType: 'news',
       duration: 60
     };
-    JAnalyticsModule.postEvent(BrowseEvent);
+    JAnalytics.postEvent(BrowseEvent);
   }
 
   render() {

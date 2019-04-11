@@ -2,7 +2,27 @@
 
 import React from 'react';
 import ReactNative from 'react-native';
-import JAnalyticsModule from 'janalytics-react-native';
+import JAnalytics from 'janalytics-react-native';
+
+
+// 开启rn错误日志采集（仅ios）
+var allowedInDevMode = true;
+JAnalytics.rnCrashLogON(allowedInDevMode)
+
+// 也可以自行将捕获到的异常主动递给sdk，不能同时开启JAnalytics.rnCrashLogON(allowedInDevMode)（仅ios）
+// import { setJSExceptionHandler } from '../error_guard';
+// var allowedInDevMode = true;
+// setJSExceptionHandler((e, isFatal) => {
+//   if(isFatal){
+//     var param = {
+//       name: e.name+"",
+//       message:e.message+""
+//     }
+//     JAnalytics.collectRNCrash(param)
+//   }else{
+//     console.log(e);
+//   }
+// }, allowedInDevMode);
 
 const {
   View,
@@ -23,15 +43,15 @@ export default class MainActivity extends React.Component {
   }
 
   onStartLogPageView = () => {
-    JAnalyticsModule.startLogPageView({pageName: "RN page naem"})
+    JAnalytics.startLogPageView({pageName: "RN page naem"})
   }
 
   onStopLogPageView = () => {
-    JAnalyticsModule.stopLogPageView({pageName: "RN page naem"})
+    JAnalytics.stopLogPageView({pageName: "RN page naem"})
   }
   
   onUploadLocation = () => {
-    JAnalyticsModule.uploadLocation({latitude: 0.4, longitude: 0.5})
+    JAnalytics.uploadLocation({latitude: 0.4, longitude: 0.5})
   }
 
   onLoginPress = () => {
@@ -43,7 +63,7 @@ export default class MainActivity extends React.Component {
       method: "login",
       success: true
     };
-    JAnalyticsModule.postEvent(LoginEvent);
+    JAnalytics.postEvent(LoginEvent);
   }
 
   onRegisterPress = () => {
@@ -55,7 +75,7 @@ export default class MainActivity extends React.Component {
       method: "register",
       success: true
     };
-    JAnalyticsModule.postEvent(RegisterEvent);
+    JAnalytics.postEvent(RegisterEvent);
   }
 
   onPurchasePress = () => {
@@ -77,7 +97,7 @@ export default class MainActivity extends React.Component {
       count: 1,
       success: true
     };
-    JAnalyticsModule.postEvent(PurchaseEvent);
+    JAnalytics.postEvent(PurchaseEvent);
   }
 
   onCountPress = () => {
@@ -88,7 +108,7 @@ export default class MainActivity extends React.Component {
       },
       type: 'count'
     };
-    JAnalyticsModule.postEvent(CountEvent);
+    JAnalytics.postEvent(CountEvent);
   }
 
   onCalculatePress = () => {
@@ -100,7 +120,7 @@ export default class MainActivity extends React.Component {
       type: 'calculate',
       value: 200
     };
-    JAnalyticsModule.postEvent(CalculateEvent);
+    JAnalytics.postEvent(CalculateEvent);
   }
 
   onBrowsePress = () => {
@@ -114,7 +134,7 @@ export default class MainActivity extends React.Component {
       contentType: 'news',
       duration: 60
     };
-    JAnalyticsModule.postEvent(BrowseEvent);
+    JAnalytics.postEvent(BrowseEvent);
   }
 
   onIdentifyAccount = () => {
