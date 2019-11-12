@@ -9,7 +9,7 @@
  * Copyright (c) 2016~ Shenzhen HXHG. All rights reserved.
  */
 
-#define JANALYTICS_VERSION_NUMBER 1.2.1
+#define JANALYTICS_VERSION_NUMBER 2.1.0
 
 #import <Foundation/Foundation.h>
 #import "JANALYTICSEventObject.h"
@@ -116,6 +116,11 @@
  * 请在发布产品时改为NO，避免产生不必要的IO
  */
 + (void)setDebug:(BOOL)enable;
+
+/*！处理url，判断是否开启圈选
+ * @param url 直接透传给sdk处理的url
+ */
++ (BOOL)handleUrl:(NSURL *)url;
 
 @end
 

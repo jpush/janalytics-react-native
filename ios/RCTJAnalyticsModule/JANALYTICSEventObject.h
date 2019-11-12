@@ -10,7 +10,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 /**
  *
  * @abstract 事件对象共同父类
