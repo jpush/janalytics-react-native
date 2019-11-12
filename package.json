@@ -1,5 +1,5 @@
 {
-  "name": "jpush-react-native",
+  "name": "janalytics-react-native",
   "description": "React Native JAnalytics component for Android and iOS",
   "homepage":"https://github.com/jpush/janalytics-react-native",
   "main": "index.js",
