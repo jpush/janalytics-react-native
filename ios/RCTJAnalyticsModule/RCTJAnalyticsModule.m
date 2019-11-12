@@ -1,46 +1,17 @@
-//
-//  RCTJAnalyticsModule.m
-//  janalytics
-//
-//  Created by oshumini on 2017/7/6.
-//  Copyright © 2017年 Facebook. All rights reserved.
-//
 
 #import "RCTJAnalyticsModule.h"
-#import "JANALYTICSService.h"
 
-#if __has_include(<React/RCTBridge.h>)
-#import <React/RCTEventDispatcher.h>
-#import <React/RCTRootView.h>
-#import <React/RCTBridge.h>
-#elif __has_include("RCTBridge.h")
-#import "RCTEventDispatcher.h"
-#import "RCTRootView.h"
-#import "RCTBridge.h"
-#elif __has_include("React/RCTBridge.h")
-#import "React/RCTEventDispatcher.h"
-#import "React/RCTRootView.h"
-#import "React/RCTBridge.h"
-#endif
+@interface RCTJAnalyticsModule ()
+
+@end
 
 @implementation RCTJAnalyticsModule
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(JAnalyticsModule)
 
-@synthesize bridge = _bridge;
-
-+ (id)allocWithZone:(NSZone *)zone {
-  static RCTJAnalyticsModule *sharedInstance = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    sharedInstance = [super allocWithZone:zone];
-  });
-  return sharedInstance;
-}
-
-- (id)init {
-  self = [super init];
-  return self;
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
 }
 
 RCT_EXPORT_METHOD(setup:(NSDictionary *)param){
@@ -51,17 +22,14 @@ RCT_EXPORT_METHOD(setup:(NSDictionary *)param){
   } else {
     // 如果param 中没有 appKey 这个字段会尝试在 JiGuangConfig.plist 文件中查找这个 appKey。
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"JiGuangConfig" ofType:@"plist"];
-    
     if (!plistPath) {
       NSLog(@"error: JiGuangConfig.plist not found");
       return;
     }
-    
     NSMutableDictionary *fileConfig = [[NSMutableDictionary alloc] initWithContentsOfFile: plistPath];
     if (fileConfig[@"appKey"]) {
       config.appKey = fileConfig[@"appKey"];
     }
-
   }
   [JANALYTICSService setupWithConfig:config];
 }
@@ -82,7 +50,7 @@ RCT_EXPORT_METHOD(stopLogPageView:(NSDictionary *)param){
   [JANALYTICSService stopLogPageView: pageName];
 }
 
-RCT_EXPORT_METHOD(uploadLocation:(NSDictionary *)param){
+RCT_EXPORT_METHOD(setLatitude:(NSDictionary *)param){
   double latitude = 0.0;
   double longitude = 0.0;
   
@@ -104,8 +72,8 @@ RCT_EXPORT_METHOD(crashLogON){
 }
 
 RCT_EXPORT_METHOD(collectCrash:(NSDictionary *)param){
-    NSString *name = nil;
-    NSString *reason = nil;
+    NSString *name = @"";
+    NSString *reason = @"";
     if (param[@"name"]) {
         name = param[@"name"];
     }
@@ -127,7 +95,7 @@ RCT_EXPORT_METHOD(setDebug:(NSDictionary *)param){
   [JANALYTICSService setDebug: enable];
 }
 
-RCT_EXPORT_METHOD(postEvent:(NSDictionary *)param){
+RCT_EXPORT_METHOD(eventRecord:(NSDictionary *)param){
   NSString *type = @"";
   if (param[@"type"]) {
     type = param[@"type"];
@@ -304,7 +272,7 @@ RCT_EXPORT_METHOD(identifyAccount: (NSDictionary *)params
     userInfo.paid = JANALYTICSPaidUnknown;
   }
   
-  userInfo.birthdate = params[@"birthdate"];
+  userInfo.birthdate = params[@"birthday"];
   userInfo.phone = params[@"phone"];
   userInfo.email = params[@"email"];
   userInfo.weiboID = params[@"weiboID"];
@@ -316,7 +284,6 @@ RCT_EXPORT_METHOD(identifyAccount: (NSDictionary *)params
   }
   
   [JANALYTICSService identifyAccount:userInfo with:^(NSInteger err, NSString *msg) {
-    
     if (err) {
       failCallbak(@[msg]);
     } else {
@@ -325,9 +292,21 @@ RCT_EXPORT_METHOD(identifyAccount: (NSDictionary *)params
   }];
 }
 
-RCT_EXPORT_METHOD(setAnalyticsReportPeriod: (NSDictionary *)params){
+RCT_EXPORT_METHOD(detachAccount: (RCTResponseSenderBlock)successCallback
+fail: (RCTResponseSenderBlock)failCallbak){
+    [JANALYTICSService detachAccount:^(NSInteger err, NSString *msg) {
+        if (err) {
+          failCallbak(@[msg]);
+        } else {
+          successCallback(@[]);
+        }
+    }];
+}
+
+RCT_EXPORT_METHOD(setFrequency: (NSDictionary *)params){
   NSUInteger period = [params[@"period"] unsignedIntegerValue];
   [JANALYTICSService setFrequency:period];
 }
 
 @end
+
