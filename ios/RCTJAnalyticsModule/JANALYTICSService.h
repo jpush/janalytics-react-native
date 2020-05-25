@@ -9,7 +9,7 @@
  * Copyright (c) 2016~ Shenzhen HXHG. All rights reserved.
  */
 
-#define JANALYTICS_VERSION_NUMBER 2.1.0
+#define JANALYTICS_VERSION_NUMBER 2.1.2
 
 #import <Foundation/Foundation.h>
 #import "JANALYTICSEventObject.h"
